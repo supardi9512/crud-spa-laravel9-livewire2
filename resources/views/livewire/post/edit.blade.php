@@ -21,6 +21,7 @@
                         </span>
                     @enderror
                 </div>
+                <a href="{{ route('post.index') }}" class="btn btn-dark me-2">CANCEL</a>
                 <button type="submit" class="btn btn-primary">UPDATE</button>
             </form>
         </div>
