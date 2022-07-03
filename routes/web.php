@@ -15,4 +15,4 @@ use App\Http\Livewire\Post;
 
 Route::get('/', Post\Index::class)->name('post.index');
 Route::get('/create', Post\Create::class)->name('post.create');
-Route::get('/edit', Post\Edit::class)->name('post.edit');
+Route::get('/edit/{id}', Post\Edit::class)->name('post.edit');

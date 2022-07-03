@@ -10,10 +10,13 @@ class Create extends Component
     public $title;
     public $content;
 
-    protected $rules = [
-        'title' => 'required|unique:posts,title',
-        'content' => 'required',
-    ];
+    protected function rules()
+    {
+        return [
+            'title' => 'required|unique:posts,title',
+            'content' => 'required',
+        ];
+    }
 
     protected $messages = [
         'title.required' => 'Judul harus diisi!',
@@ -32,7 +35,7 @@ class Create extends Component
 
         Post::create($validatedData);
 
-        session()->flash('message', 'Data berhasil disimpan!');
+        session()->flash('message', 'Data berhasil ditambah!');
 
         return redirect()->route('post.index');
     }
