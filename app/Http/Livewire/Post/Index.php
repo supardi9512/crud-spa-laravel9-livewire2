@@ -7,6 +7,19 @@ use App\Models\Post;
 
 class Index extends Component
 {
+    public function destroy($postId)
+    {
+        $post = Post::find($postId);
+
+        if($post) {
+            $post->delete();
+        }
+
+        session()->flash('message', 'Data berhasil dihapus!');
+
+        return redirect()->route('post.index');
+    }
+
     public function render()
     {
         return view('livewire.post.index', [
