@@ -3,6 +3,7 @@
     <table class="table table-bordered">
         <thead class="table-dark">
             <tr>
+                <th scope="col">No.</th>
                 <th scope="col">Judul</th>
                 <th scope="col">Konten</th>
                 <th scope="col">Aksi</th>
@@ -11,6 +12,7 @@
         <tbody>
             @foreach($posts as $post)
             <tr>
+                <td>{{ ($posts ->currentpage()-1) * $posts ->perpage() + $loop->index + 1 }}</td>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->content }}</td>
                 <td class="text-center">
@@ -21,4 +23,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ $posts->links() }}
 </div>

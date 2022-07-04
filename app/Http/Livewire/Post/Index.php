@@ -4,9 +4,14 @@ namespace App\Http\Livewire\Post;
 
 use Livewire\Component;
 use App\Models\Post;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
+
     public function destroy($postId)
     {
         $post = Post::find($postId);
