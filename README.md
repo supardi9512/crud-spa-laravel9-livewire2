@@ -16,3 +16,4 @@ Simple Create, Read, Update, and Delete Single Page Application using Laravel 9 
 - Create Data (Inc. Validation)
 - Update Data (Inc. Validation)
 - Delete Data 
+- Search Data 
