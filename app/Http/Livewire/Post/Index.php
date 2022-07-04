@@ -12,6 +12,8 @@ class Index extends Component
 
     protected $paginationTheme = 'bootstrap';
 
+    public $search;
+
     public function destroy($postId)
     {
         $post = Post::find($postId);
@@ -28,7 +30,9 @@ class Index extends Component
     public function render()
     {
         return view('livewire.post.index', [
-            'posts' => Post::latest()->paginate(5)
+            'posts' => Post::where('title', 'like', '%'.$this->search.'%')
+                ->orWhere('content', 'like', '%'.$this->search.'%')
+                ->latest()->paginate(5)
         ])->extends('layouts.app')->section('content');
     }
 }

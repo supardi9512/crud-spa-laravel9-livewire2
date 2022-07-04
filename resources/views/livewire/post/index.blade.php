@@ -1,5 +1,14 @@
 <div>
-<a href="{{ route('post.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+    <div class="row mb-3">
+        <div class="col-12">
+            <a href="{{ route('post.create') }}" class="btn btn-md btn-success">TAMBAH POST</a>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <input type="text" wire:model="search" class="form-control" placeholder="Pencarian">
+        </div>
+    </div>
     <table class="table table-bordered">
         <thead class="table-dark">
             <tr>
